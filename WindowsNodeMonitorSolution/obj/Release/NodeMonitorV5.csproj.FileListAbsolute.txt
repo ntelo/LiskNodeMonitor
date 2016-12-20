@@ -1,0 +1,57 @@
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\comands\LiskMainInstall.txt
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\comands\LiskTestInstall -test.txt
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\comands\LiskTestInstall.txt
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\monitorconfig.txt
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\comands\disableforging.txt
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\comands\getlatestblock.txt
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\comands\enableforging.txt
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\monitordata.txt
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\NodeMonitor.exe.config
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\NodeMonitor.exe
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\NodeMonitor.pdb
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\Newtonsoft.Json.dll
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\Renci.SshNet.dll
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\RestSharp.dll
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\Renci.SshNet.xml
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\Newtonsoft.Json.xml
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\RestSharp.xml
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\obj\Release\NodeMonitorV5.csprojResolveAssemblyReference.cache
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\obj\Release\LiskLog.AppConfigEdit.resources
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\obj\Release\LiskLog.ReinstallLisk.resources
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\obj\Release\LiskLog.ServersEdit.resources
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\obj\Release\LiskLog.AccountEdit.resources
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\obj\Release\LiskLog.AccountsCfg.resources
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\obj\Release\LiskLog.NodeMonitor.resources
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\obj\Release\LiskLog.Properties.Resources.resources
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\obj\Release\NodeMonitorV5.csproj.GenerateResource.Cache
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\obj\Release\NodeMonitor.exe
+D:\Lisk Development\DelegateVotes\NodeMonitorV5\obj\Release\NodeMonitor.pdb
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\NodeMonitor.exe.config
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\obj\Release\NodeMonitor.exe
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\obj\Release\NodeMonitor.pdb
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\comands\LiskMainInstall.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\comands\LiskTestInstall -test.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\comands\LiskTestInstall.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\monitorconfig.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\comands\disableforging.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\comands\getlatestblock.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\comands\enableforging.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\monitordata.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\NodeMonitor.exe
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\NodeMonitor.pdb
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\Newtonsoft.Json.dll
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\Renci.SshNet.dll
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\RestSharp.dll
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\Renci.SshNet.xml
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\Newtonsoft.Json.xml
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\RestSharp.xml
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\obj\Release\NodeMonitorV5.csprojResolveAssemblyReference.cache
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\obj\Release\LiskLog.AppConfigEdit.resources
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\obj\Release\LiskLog.ReinstallLisk.resources
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\obj\Release\LiskLog.ServersEdit.resources
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\obj\Release\LiskLog.AccountEdit.resources
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\obj\Release\LiskLog.AccountsCfg.resources
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\obj\Release\LiskLog.NodeMonitor.resources
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\obj\Release\LiskLog.Properties.Resources.resources
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\obj\Release\NodeMonitorV5.csproj.GenerateResource.Cache
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV5\bin\Release\!monitordata - vmware.txt

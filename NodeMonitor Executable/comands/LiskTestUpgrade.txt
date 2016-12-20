@@ -1,0 +1,4 @@
+cd ~
+rm -f installLisk.sh
+wget https://downloads.lisk.io/lisk/test/installLisk.sh &&
+echo '' | bash installLisk.sh upgrade -r test && echo '#password#'

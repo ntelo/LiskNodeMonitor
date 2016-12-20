@@ -1,0 +1,23 @@
+D:\Lisk Development\DelegateVotes\NodeMonitorV2\bin\Debug\data - Copy.txt
+D:\Lisk Development\DelegateVotes\NodeMonitorV2\bin\Debug\SEND EMAIL UBUNTO.txt
+D:\Lisk Development\DelegateVotes\NodeMonitorV2\bin\Debug\data.txt
+D:\Lisk Development\DelegateVotes\NodeMonitorV2\bin\Debug\LiskLog.exe.config
+D:\Lisk Development\DelegateVotes\NodeMonitorV2\bin\Debug\LiskLog.exe
+D:\Lisk Development\DelegateVotes\NodeMonitorV2\bin\Debug\LiskLog.pdb
+D:\Lisk Development\DelegateVotes\NodeMonitorV2\bin\Debug\Newtonsoft.Json.dll
+D:\Lisk Development\DelegateVotes\NodeMonitorV2\bin\Debug\Renci.SshNet.dll
+D:\Lisk Development\DelegateVotes\NodeMonitorV2\bin\Debug\RestSharp.dll
+D:\Lisk Development\DelegateVotes\NodeMonitorV2\bin\Debug\Renci.SshNet.pdb
+D:\Lisk Development\DelegateVotes\NodeMonitorV2\bin\Debug\Renci.SshNet.xml
+D:\Lisk Development\DelegateVotes\NodeMonitorV2\bin\Debug\Newtonsoft.Json.xml
+D:\Lisk Development\DelegateVotes\NodeMonitorV2\bin\Debug\RestSharp.xml
+D:\Lisk Development\DelegateVotes\NodeMonitorV2\obj\Debug\NodeMonitorV2.csprojResolveAssemblyReference.cache
+D:\Lisk Development\DelegateVotes\NodeMonitorV2\obj\Debug\LiskLog.NodeMonitor.resources
+D:\Lisk Development\DelegateVotes\NodeMonitorV2\obj\Debug\LiskLog.Properties.Resources.resources
+D:\Lisk Development\DelegateVotes\NodeMonitorV2\obj\Debug\NodeMonitorV2.csproj.GenerateResource.Cache
+D:\Lisk Development\DelegateVotes\NodeMonitorV2\obj\Debug\LiskLog.exe
+D:\Lisk Development\DelegateVotes\NodeMonitorV2\obj\Debug\LiskLog.pdb
+D:\Lisk Development\DelegateVotes\NodeMonitorV2\bin\Debug\data - Copy (2).txt
+D:\Lisk Development\DelegateVotes\NodeMonitorV3\bin\Debug\LiskLog.exe.config
+D:\Lisk Development\DelegateVotes\NodeMonitorV3\obj\Debug\LiskLog.exe
+D:\Lisk Development\DelegateVotes\NodeMonitorV3\obj\Debug\LiskLog.pdb

@@ -1,0 +1,89 @@
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\bin\Debug\comands\LiskTestUpgrade.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\bin\Debug\comands\LiskMainUpgrade.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\bin\Debug\comands\LiskMainInstall.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\bin\Debug\comands\LiskMainInstall_old.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\bin\Debug\comands\LiskTestInstall - Copy.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\bin\Debug\comands\LiskTestInstall.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\bin\Debug\comands\LiskTestInstall_old.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\bin\Debug\monitorconfig.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\bin\Debug\comands\disableforging.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\bin\Debug\comands\getlatestblock.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\bin\Debug\comands\enableforging.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\bin\Debug\!monitordata - vmware.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\bin\Debug\monitordata.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\bin\Debug\NodeMonitor.exe.config
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\bin\Debug\NodeMonitor.exe
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\bin\Debug\NodeMonitor.pdb
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\bin\Debug\Newtonsoft.Json.dll
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\bin\Debug\Renci.SshNet.dll
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\bin\Debug\RestSharp.dll
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\bin\Debug\Renci.SshNet.pdb
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\bin\Debug\Renci.SshNet.xml
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\bin\Debug\Newtonsoft.Json.xml
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\bin\Debug\RestSharp.xml
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\obj\Debug\NodeMonitorV7.csprojResolveAssemblyReference.cache
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\obj\Debug\LiskLog.AppConfigEdit.resources
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\obj\Debug\LiskLog.ReinstallLisk.resources
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\obj\Debug\LiskLog.ServersEdit.resources
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\obj\Debug\LiskLog.AccountEdit.resources
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\obj\Debug\LiskLog.AccountsCfg.resources
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\obj\Debug\LiskLog.NodeMonitor.resources
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\obj\Debug\LiskLog.Properties.Resources.resources
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\obj\Debug\NodeMonitorV7.csproj.GenerateResource.Cache
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\obj\Debug\NodeMonitor.exe
+D:\ONE DRIVE PERSONAL\Lisk Development\DelegateVotes\NodeMonitorV7\obj\Debug\NodeMonitor.pdb
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\bin\Debug\comands\LiskTestUpgrade.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\bin\Debug\comands\LiskMainUpgrade.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\bin\Debug\comands\LiskMainInstall.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\bin\Debug\comands\LiskMainInstall_old.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\bin\Debug\comands\LiskTestInstall - Copy.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\bin\Debug\comands\LiskTestInstall.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\bin\Debug\comands\LiskTestInstall_old.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\bin\Debug\monitorconfig.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\bin\Debug\comands\disableforging.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\bin\Debug\comands\getlatestblock.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\bin\Debug\comands\enableforging.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\bin\Debug\monitordata.txt
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\bin\Debug\NodeMonitor.exe.config
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\bin\Debug\NodeMonitor.exe
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\bin\Debug\NodeMonitor.pdb
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\bin\Debug\Renci.SshNet.dll
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\bin\Debug\Renci.SshNet.xml
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\obj\Debug\LiskLog.AppConfigEdit.resources
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\obj\Debug\LiskLog.ReinstallLisk.resources
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\obj\Debug\LiskLog.ServersEdit.resources
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\obj\Debug\LiskLog.AccountEdit.resources
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\obj\Debug\LiskLog.AccountsCfg.resources
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\obj\Debug\LiskLog.NodeMonitor.resources
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\obj\Debug\LiskLog.Properties.Resources.resources
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\obj\Debug\NodeMonitorV7.csproj.GenerateResource.Cache
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\obj\Debug\NodeMonitor.exe
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\obj\Debug\NodeMonitor.pdb
+D:\ONE DRIVE PERSONAL\Lisk Development\LiskNodeMonitor\obj\Debug\NodeMonitorV7.csprojResolveAssemblyReference.cache
+D:\GitHub\NodeMonitor\LiskNodeMonitor\bin\Debug\comands\LiskTestUpgrade.txt
+D:\GitHub\NodeMonitor\LiskNodeMonitor\bin\Debug\comands\LiskMainUpgrade.txt
+D:\GitHub\NodeMonitor\LiskNodeMonitor\bin\Debug\comands\LiskMainInstall.txt
+D:\GitHub\NodeMonitor\LiskNodeMonitor\bin\Debug\comands\LiskMainInstall_old.txt
+D:\GitHub\NodeMonitor\LiskNodeMonitor\bin\Debug\comands\LiskTestInstall - Copy.txt
+D:\GitHub\NodeMonitor\LiskNodeMonitor\bin\Debug\comands\LiskTestInstall.txt
+D:\GitHub\NodeMonitor\LiskNodeMonitor\bin\Debug\comands\LiskTestInstall_old.txt
+D:\GitHub\NodeMonitor\LiskNodeMonitor\bin\Debug\monitorconfig.txt
+D:\GitHub\NodeMonitor\LiskNodeMonitor\bin\Debug\comands\disableforging.txt
+D:\GitHub\NodeMonitor\LiskNodeMonitor\bin\Debug\comands\getlatestblock.txt
+D:\GitHub\NodeMonitor\LiskNodeMonitor\bin\Debug\comands\enableforging.txt
+D:\GitHub\NodeMonitor\LiskNodeMonitor\bin\Debug\monitordata.txt
+D:\GitHub\NodeMonitor\LiskNodeMonitor\bin\Debug\NodeMonitor.exe.config
+D:\GitHub\NodeMonitor\LiskNodeMonitor\bin\Debug\NodeMonitor.exe
+D:\GitHub\NodeMonitor\LiskNodeMonitor\bin\Debug\NodeMonitor.pdb
+D:\GitHub\NodeMonitor\LiskNodeMonitor\bin\Debug\Renci.SshNet.dll
+D:\GitHub\NodeMonitor\LiskNodeMonitor\bin\Debug\Renci.SshNet.xml
+D:\GitHub\NodeMonitor\LiskNodeMonitor\obj\Debug\LiskLog.AppConfigEdit.resources
+D:\GitHub\NodeMonitor\LiskNodeMonitor\obj\Debug\LiskLog.ReinstallLisk.resources
+D:\GitHub\NodeMonitor\LiskNodeMonitor\obj\Debug\LiskLog.ServersEdit.resources
+D:\GitHub\NodeMonitor\LiskNodeMonitor\obj\Debug\LiskLog.AccountEdit.resources
+D:\GitHub\NodeMonitor\LiskNodeMonitor\obj\Debug\LiskLog.AccountsCfg.resources
+D:\GitHub\NodeMonitor\LiskNodeMonitor\obj\Debug\LiskLog.NodeMonitor.resources
+D:\GitHub\NodeMonitor\LiskNodeMonitor\obj\Debug\LiskLog.Properties.Resources.resources
+D:\GitHub\NodeMonitor\LiskNodeMonitor\obj\Debug\NodeMonitorV7.csproj.GenerateResource.Cache
+D:\GitHub\NodeMonitor\LiskNodeMonitor\obj\Debug\NodeMonitor.exe
+D:\GitHub\NodeMonitor\LiskNodeMonitor\obj\Debug\NodeMonitor.pdb

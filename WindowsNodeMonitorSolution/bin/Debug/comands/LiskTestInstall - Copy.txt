@@ -1,0 +1,9 @@
+cd ~ && cd lisk-test && bash lisk.sh stop && rm -rf ~/lisk-test &&
+cd ~ && rm -rf ~/lisk-test && rm -rf installLisk.sh &&
+wget https://downloads.lisk.io/lisk/test/#versionnumber#/lisk-#versionnumber#-Linux-x86_64.tar.gz &&
+tar -xzf lisk-#versionnumber#-Linux-x86_64.tar.gz &&
+mv /home/lisk/lisk-#versionnumber#-Linux-x86_64 /home/lisk/lisk-test &&
+rm -f /home/lisk/lisk-#versionnumber#-Linux-x86_64.tar.gz &&
+cd ~ && cd lisk-test && bash lisk.sh coldstart && sleep 5 && bash lisk.sh stop && bash tune.sh && bash lisk.sh start &&
+echo '#password#' | sudo -S ufw deny 7000 && echo '#password#' | sudo -S ufw reload &&
+cd ~ && cd lisk-test && bash lisk.sh rebuild 

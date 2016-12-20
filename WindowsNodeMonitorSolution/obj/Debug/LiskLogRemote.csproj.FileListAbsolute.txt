@@ -1,0 +1,19 @@
+D:\Lisk Development\DelegateVotes\LiskLogRemote\obj\Debug\LiskLog.NodeMonitor.resources
+D:\Lisk Development\DelegateVotes\LiskLogRemote\obj\Debug\LiskLog.Properties.Resources.resources
+D:\Lisk Development\DelegateVotes\LiskLogRemote\obj\Debug\LiskLogRemote.csproj.GenerateResource.Cache
+D:\Lisk Development\DelegateVotes\LiskLogRemote\bin\Debug\data - Copy.txt
+D:\Lisk Development\DelegateVotes\LiskLogRemote\bin\Debug\plink.exe
+D:\Lisk Development\DelegateVotes\LiskLogRemote\bin\Debug\SEND EMAIL UBUNTO.txt
+D:\Lisk Development\DelegateVotes\LiskLogRemote\bin\Debug\data.txt
+D:\Lisk Development\DelegateVotes\LiskLogRemote\bin\Debug\LiskLog.exe.config
+D:\Lisk Development\DelegateVotes\LiskLogRemote\bin\Debug\LiskLog.exe
+D:\Lisk Development\DelegateVotes\LiskLogRemote\bin\Debug\LiskLog.pdb
+D:\Lisk Development\DelegateVotes\LiskLogRemote\bin\Debug\Newtonsoft.Json.dll
+D:\Lisk Development\DelegateVotes\LiskLogRemote\bin\Debug\RestSharp.dll
+D:\Lisk Development\DelegateVotes\LiskLogRemote\bin\Debug\Newtonsoft.Json.xml
+D:\Lisk Development\DelegateVotes\LiskLogRemote\bin\Debug\RestSharp.xml
+D:\Lisk Development\DelegateVotes\LiskLogRemote\obj\Debug\LiskLog.exe
+D:\Lisk Development\DelegateVotes\LiskLogRemote\obj\Debug\LiskLog.pdb
+D:\Lisk Development\DelegateVotes\NodeMonitor\bin\Debug\LiskLog.exe.config
+D:\Lisk Development\DelegateVotes\NodeMonitor\obj\Debug\LiskLog.exe
+D:\Lisk Development\DelegateVotes\NodeMonitor\obj\Debug\LiskLog.pdb

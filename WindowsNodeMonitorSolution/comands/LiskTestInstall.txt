@@ -1,0 +1,5 @@
+cd ~ && cd lisk-test && bash lisk.sh stop && rm -rf ~/lisk-test &&
+cd ~ && rm -rf ~/lisk-test && cd ~ && rm -rf installLisk.sh &&
+wget https://downloads.lisk.io/scripts/installLisk.sh &&
+echo '#password#' | bash installLisk.sh install -r test &&
+echo '#password#' | sudo -S ufw deny 7000 && echo '#password#' | sudo -S ufw reload

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="NodeMonitor" Class="DatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\sql2014;Initial Catalog=NodeMonitor;Persist Security Info=True;User ID=sa" SettingsObjectName="LiskLog.Properties.Settings" SettingsPropertyName="NodeMonitorConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Accounts" Member="Accounts">
+    <Type Name="Account">
+      <Column Name="AccountID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EnableMonitor" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Missedblocks" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Producedblocks" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Productivity" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Rate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Enviroment" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Account_Server" Member="Servers" ThisKey="AccountID" OtherKey="AccountID" Type="Server" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Servers" Member="Servers">
+    <Type Name="Server">
+      <Column Name="ServerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccountID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ServerName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="isMainServer" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isForging" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BlockChainHeight" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BlockDiff" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BlockChainHeightPeer" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsEnable" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ServerIP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ServerPort" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastBlockMinutsPassedSince" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="LastBlockForgedHeight" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IsRebuilding" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LastRebuild" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsChainSynced" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsChainSyncing" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Error" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="LastUpdateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Account_Server" Member="Account" ThisKey="AccountID" OtherKey="AccountID" Type="Account" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

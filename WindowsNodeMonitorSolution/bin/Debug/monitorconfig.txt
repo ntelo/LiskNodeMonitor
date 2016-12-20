@@ -1,0 +1,1 @@
+{"peers":"13.69.159.242;40.68.34.176;52.165.40.188;13.82.31.30;13.91.61.2","liskBaseUrl":"https://testnet.lisk.io","blocksInterval":10,"liskFolderName":"lisk-test","enviroment":"TESTENET","timerticksms":120000,"blockdiftorebuild":18,"emailto":"","emailfrom":"","emailPassword":"","enableEmailNotifications":false,"liskVersionNumber":"0.5.0"}
