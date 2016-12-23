@@ -856,13 +856,53 @@ namespace LiskLog
                     bll.SendEmail(sms, account.account.email, bll.GetAccountString(account) + tailsLogs+ "\nERROR:" + err + " " + err2);
 
                     //RELOAD PREVIOUS MAIN 2
-                   var serverToReload= activeServers.Where(s => s.serverName == previousMain).FirstOrDefault();
-                    if(serverToReload.isMainServer==false && serverToReload.blockDiff<3)
+                    //var serverToReload= activeServers.Where(s => s.serverName == previousMain).FirstOrDefault();
+                    // if(serverToReload.isRebuilding==false && serverToReload.isMainServer==false && serverToReload.blockDiff<5)
+                    // {
+                    //     bll.StopAndStartNodeSSH(serverToReload);
+
+                    // }
+
+                    //reload all backups
+                  
+
+                    var backs= activeServers.Where(s => s.isMainServer==false && s.isRebuilding==false).ToList();
+                    if(backs.Count>0)
                     {
-                        bll.StopAndStartNodeSSH(serverToReload);
-                        System.Threading.Thread.Sleep(1000);
-                    }
+                        List<Task> tasks = new List<Task>();
+
+                        string serversToBackUp = "";
+                        foreach (Servers bck in backs)
+                        {
+                            if(bck.lastRebbot==null || bck.lastRebbot==new DateTime())
+                            {
+                                bck.lastRebbot = DateTime.Now;
+                            }
+                            if(bck.lastRebbot.AddMinutes(75)<DateTime.Now)
+                            {
+                                bck.lastRebbot = DateTime.Now;
+                                serversToBackUp += bck.serverName + "\n";
+                                // bll.StopAndStartNodeSSH(bck);
+                                Task t = Task.Factory.StartNew(() =>
+                                {
+                                    bll.StopAndStartNodeSSH(bck);
+                                });
+
+                                tasks.Add(t);
+                            }
+                          
+                        }
+                        if(tasks.Count>0)
+                        {
+                           
+                            Task.WaitAll(tasks.ToArray());
+                            bll.SendEmail("Reload Nº backups:" + tasks.Count.ToString() + " Servers Reloaded :" + serversToBackUp, currentConfig.emailto, " Servers :" + serversToBackUp);
+                        }
                         
+                    }
+                   
+
+
                     #endregion
 
 
