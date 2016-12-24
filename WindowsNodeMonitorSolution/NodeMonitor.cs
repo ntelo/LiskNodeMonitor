@@ -409,6 +409,9 @@ namespace LiskLog
                     if (s.lastRebuild == null || s.lastRebuild == DateTime.Now)
                         s.lastRebuild = DateTime.Now;
 
+                    if (s.lastReboot == null || s.lastReboot == DateTime.Now)
+                        s.lastReboot = DateTime.Now.AddHours(-5);
+
                     // GetServerMonitorData_V2(s, account);
                     Task t = Task.Factory.StartNew(() =>
                     {
@@ -435,18 +438,19 @@ namespace LiskLog
                 string serverResult = bll.GetAccountString(account);//GetServerJsonToNotify(s);//JsonConvert.SerializeObject(s);
                 message.Append("\r\nACCOUNT INFO:\r\n" + serverResult);
 
-                message.Append("\r\n");
+               // message.Append("\r\n");
 
                 foreach (Servers s in account.servers.Where(s => s.isEnable == true).OrderByDescending(s => s.isForging).OrderByDescending(s=>s.consensus))
                 {
                     message.Append("\r\nSERVER INFO: " + s.serverName.ToUpper() + " " + s.serverIP + " " + s.serverPort + " IS MAINSERVER:" + s.isMainServer + " IS FORGING:" + s.isForging + " IS REBUILDING:" + s.isRebuilding + "\r\n## BLOCK DIFF: " + s.blockDiff + " ##\r\n");
-                  
+                   
                     message.Append("Consensus: " + s.consensus.ToString() + " ConsensusFromLog: " + s.consensusFromLog.ToString() +   "\r\n");
                     message.Append("ConsensusStr: " + s.consensusStr.Trim() + "\r\n");
                     message.Append("ConsensusAVG: " + s.consensusAvg.ToString() + "\r\n");
                     message.Append("isChainSyncing: " + s.isChainSyncing.ToString() + "\r\n");
-                    message.Append("Forging Position Curren Slot: " + s.forgingPositionCurrenSlot.ToString() + "\r\n");
+                    message.Append("Forging Position Current Slot: " + s.forgingPositionCurrenSlot.ToString() + "\r\n");
                     message.Append("Estimated Time(sec) To Forge : " + (s.forgingPositionCurrenSlot==-1?">100 seg" : (s.forgingPositionCurrenSlot*10).ToString() + " seg") + "\r\n");
+                    message.Append("Last Reboot: " + s.lastReboot.ToString() + "\r\n");
                     if (s.isRebuilding)
                     {
                         message.AppendLine(s.serverName.ToUpper() + "\r\n ..IS REBUILDING....\r\n");
@@ -855,53 +859,6 @@ namespace LiskLog
 
                     bll.SendEmail(sms, account.account.email, bll.GetAccountString(account) + tailsLogs+ "\nERROR:" + err + " " + err2);
 
-                    //RELOAD PREVIOUS MAIN 2
-                    //var serverToReload= activeServers.Where(s => s.serverName == previousMain).FirstOrDefault();
-                    // if(serverToReload.isRebuilding==false && serverToReload.isMainServer==false && serverToReload.blockDiff<5)
-                    // {
-                    //     bll.StopAndStartNodeSSH(serverToReload);
-
-                    // }
-
-                    //reload all backups
-                  
-
-                    var backs= activeServers.Where(s => s.isMainServer==false && s.isRebuilding==false).ToList();
-                    if(backs.Count>0)
-                    {
-                        List<Task> tasks = new List<Task>();
-
-                        string serversToBackUp = "";
-                        foreach (Servers bck in backs)
-                        {
-                            if(bck.lastRebbot==null || bck.lastRebbot==new DateTime())
-                            {
-                                bck.lastRebbot = DateTime.Now;
-                            }
-                            if(bck.lastRebbot.AddMinutes(75)<DateTime.Now)
-                            {
-                                bck.lastRebbot = DateTime.Now;
-                                serversToBackUp += bck.serverName + "\n";
-                                // bll.StopAndStartNodeSSH(bck);
-                                Task t = Task.Factory.StartNew(() =>
-                                {
-                                    bll.StopAndStartNodeSSH(bck);
-                                });
-
-                                tasks.Add(t);
-                            }
-                          
-                        }
-                        if(tasks.Count>0)
-                        {
-                           
-                            Task.WaitAll(tasks.ToArray());
-                            bll.SendEmail("Reload Nº backups:" + tasks.Count.ToString() + " Servers Reloaded :" + serversToBackUp, currentConfig.emailto, " Servers :" + serversToBackUp);
-                        }
-                        
-                    }
-                   
-
 
                     #endregion
 
@@ -1015,7 +972,37 @@ namespace LiskLog
                     tracing += " mainServer Activate Forging \r\n";
 
             }
-        
+
+            //reload all backups if forging time <3 min and lastReboot time passed >2 hours
+            if (mainServer.LastBlockMinutsPassedSince<=2)
+            {
+               
+                var backs = account.servers.Where(s => s.isMainServer == false && s.isRebuilding == false && s.lastReboot.AddHours(2) <= DateTime.Now).OrderBy(s => s.lastReboot).ToList();
+             
+                if(backs.Count>0)
+                {
+                    string serversToReload = string.Join(",", backs.Select(s => s.serverName).ToArray());
+                    bll.SendEmail("Try Reload Nº backups Servers:" + backs.Count.ToString() + " Servers Reloaded :" + backs.Select(s=>s.serverName).ToString(), currentConfig.emailto, " Servers Reloaded :" + backs.Select(s => s.serverName).ToString());
+
+                    foreach (Servers bck in backs)
+                    {
+                        if (bck.lastReboot.AddHours(2) < DateTime.Now)
+                        {
+                            bck.lastReboot = DateTime.Now;
+                         
+
+                            bll.StopAndStartNodeSSH(bck);
+
+                        }
+
+                    }
+                   
+                }
+              
+                
+            }
+           
+
 
             return res;
 
