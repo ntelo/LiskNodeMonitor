@@ -973,27 +973,23 @@ namespace LiskLog
 
             }
 
-            //reload all backups if forging time <3 min and lastReboot time passed >2 hours
-            if (mainServer.LastBlockMinutsPassedSince<=2)
+            //reload all backups if forging last block <3 min and lastReboot time passed >2 hours
+            if (mainServer.LastBlockMinutsPassedSince<=3)
             {
                
-                var backs = account.servers.Where(s => s.isMainServer == false && s.isRebuilding == false && s.lastReboot.AddHours(2) <= DateTime.Now).OrderBy(s => s.lastReboot).ToList();
+                var backs = account.servers.Where(s => s.isMainServer == false && s.isRebuilding == false && s.lastReboot.AddHours(1) <= DateTime.Now).OrderBy(s => s.lastReboot).ToList();
              
                 if(backs.Count>0)
                 {
-                    string serversToReload = string.Join(",", backs.Select(s => s.serverName).ToArray());
-                    bll.SendEmail("Try Reload Nº backups Servers:" + backs.Count.ToString() + " Servers Reloaded :" + backs.Select(s=>s.serverName).ToString(), currentConfig.emailto, " Servers Reloaded :" + backs.Select(s => s.serverName).ToString());
+                    string[] serv = backs.Select(s => s.serverName).ToArray();
+                    string serversToReload = string.Join(",", serv);
+                    bll.SendEmail("Try Reload Nº backups Servers:" + backs.Count.ToString() + " Servers Reloaded :" + serversToReload, currentConfig.emailto, " Servers Reloaded :" + serversToReload);
 
                     foreach (Servers bck in backs)
                     {
-                        if (bck.lastReboot.AddHours(2) < DateTime.Now)
-                        {
-                            bck.lastReboot = DateTime.Now;
-                         
+                        bck.lastReboot = DateTime.Now;
 
-                            bll.StopAndStartNodeSSH(bck);
-
-                        }
+                        bll.StopAndStartNodeSSH(bck);
 
                     }
                    
