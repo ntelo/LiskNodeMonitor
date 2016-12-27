@@ -973,11 +973,11 @@ namespace LiskLog
 
             }
 
-            //reload all backups if forging last block <3 min and lastReboot time passed >2 hours
-            if (mainServer.LastBlockMinutsPassedSince<=3)
+            //reload one at a time backups if forging last block <3 min and lastReboot time passed >2 hours
+            if (mainServer.LastBlockMinutsPassedSince<=2)
             {
                
-                var backs = account.servers.Where(s => s.isMainServer == false && s.isRebuilding == false && s.lastReboot.AddHours(1) <= DateTime.Now).OrderBy(s => s.lastReboot).ToList();
+                var backs = account.servers.Where(s => s.isMainServer == false && s.isRebuilding == false && s.lastReboot.AddHours(6) <= DateTime.Now).OrderBy(s => s.lastReboot).Take(1).ToList();
              
                 if(backs.Count>0)
                 {
