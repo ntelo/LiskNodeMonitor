@@ -105,6 +105,7 @@ namespace LiskLog.Objects
     public class Servers : ICloneable
     {
         //isMainServer
+        public int priority { get; set; }
         public bool isMainServer { get; set; }
         public string serverName { get; set; }
         public bool isEnable { get; set; }
@@ -134,7 +135,7 @@ namespace LiskLog.Objects
         public string email { get; set; }
         public DateTime lastRebuild { get; set; }
 
-        public DateTime lastRebbot { get; set; }
+        public DateTime lastReboot { get; set; }
         public bool isRebuilding { get; set; }
         public bool isForging { get; set; }
 

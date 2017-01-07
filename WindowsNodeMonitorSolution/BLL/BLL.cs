@@ -540,7 +540,7 @@ namespace LiskLog
                 SshCommand result = null;
                 var client = this.GetConection(server);
                 string command = string.Format("cd && cd {0} && bash lisk.sh stop && echo '{1}' | sudo -S reboot",cfgCurrent.liskFolderName, server.userPassword.Trim());
-                server.lastRebbot = DateTime.Now;
+                server.lastReboot = DateTime.Now;
                 result = client.RunCommand(command);
             }
             catch(Exception ex)
@@ -556,7 +556,7 @@ namespace LiskLog
             SshCommand consensusResult=null;
             try
             {
-                    var resp = client.RunCommand("cd " + cfgCurrent.liskFolderName.Trim() + " && cd logs && tail -15 lisk.log");
+                    var resp = client.RunCommand("cd " + cfgCurrent.liskFolderName.Trim() + " && cd logs && tail -10 lisk.log");
                     sms.Append("\r\nRESULT:" + resp.Result);
                     sms.Append("\r\nERROR:" + resp.Error);
 
@@ -593,7 +593,7 @@ namespace LiskLog
                     //grep Inadequate logs/lisk.log
                    var client= this.GetConection(server);
                     consensusResult = client.RunCommand("cd " + cfgCurrent.liskFolderName.Trim() + " && cd logs && grep 'consensus'  lisk.log| tail -2");
-                     res = consensusResult.Result.ToString();
+                     res = consensusResult.Result.ToString().Replace("\nBinary file lisk.log matches", " ").Trim();
                     if (res.Contains("Inadequate"))
                     {
                         server.consensus = 0;
@@ -1437,23 +1437,27 @@ namespace LiskLog
                             sms.Append("\r\nRESULT ufw status :" + ufwEnable.Result);
                             sms.Append("\r\nERROR ufw status :" + ufwEnable.Error);
 
-                            if (ufwEnable != null && !ufwEnable.Result.Contains(": active"))
-                            {
-                                respText += "\r\nERROR: UFW DISABLE IN " + server.serverIP;
-                                SendEmail("ERROR: UFW DISABLE IN " + server.serverIP, emailto, respText);
-                            }
+                        if (ufwEnable != null && !ufwEnable.Result.Contains(": active"))
+                        {
+                            respText += "\r\nERROR: UFW DISABLE IN " + server.serverIP;
+                            SendEmail("ERROR: UFW DISABLE IN " + server.serverIP, emailto, respText);
+                        }
+                        else
+                        {
                             //echo '#password#' | sudo -S ufw deny 8000 && echo '#password#' | sudo -S ufw reload 
                             string comandClosePort = "echo '#password#' | sudo -S ufw deny " + server.serverPort.ToString().Trim() + " && echo '#password#' | sudo -S ufw reload";
                             //string comandClosePort = "sudo ufw deny " + server.serverPort.ToString().Trim() + " && sudo ufw reload";
 
                             comandClosePort = comandClosePort.Replace("#password#", server.userPassword.Trim());
-                            var resp2 = client.RunCommand(comandClosePort); 
+                            var resp2 = client.RunCommand(comandClosePort);
 
                             sms.Append("\r\nRESULT ClosePort :" + resp2.Result);
                             sms.Append("\r\nERROR ClosePort :" + resp2.Error);
 
 
                             respText += resp2.Result + " " + resp2.Error;
+                        }
+                          
                          
                      
 
@@ -1508,11 +1512,12 @@ namespace LiskLog
 
                     if (ufwEnable != null && !ufwEnable.Result.Contains(": active"))
                     {
-                        respText += "\r\nERROR: UFW DISABLE IN " + server.serverIP;
+                        respText += "\r\nWARNING: UFW DISABLE IN " + server.serverIP;
                         sms.AppendLine(respText);
-                        SendEmail("ERROR: UFW DISABLE IN " + server.serverIP, emailto, respText);
+                        //SendEmail("ERROR: UFW DISABLE IN " + server.serverIP, emailto, respText);
                     }
-
+                    else
+                {
                     //string comandOpenPort = "sudo ufw allow " + server.serverPort.ToString().Trim() + " && " + " sudo ufw reload";
                     //echo '#password#' | sudo -S ufw allow 8000 && echo '#password#' | sudo -S ufw reload
                     string comandOpenPort = "echo '#password#' | sudo -S ufw allow " + server.serverPort.ToString().Trim() + " && " + " echo '#password#' | sudo -S ufw reload";
@@ -1523,8 +1528,11 @@ namespace LiskLog
                     sms.Append("\r\nRESULT OpenPort :" + resp.Result);
                     sms.Append("\r\nERROR OpenPort :" + resp.Error);
 
-                   // client.RunCommand("exit");
+                    // client.RunCommand("exit");
                     respText += resp.Result + " " + resp.Error;
+                }
+
+                  
                  
                 //    client.Disconnect();
                 //}

@@ -146,7 +146,7 @@
             this.txt_logs.Multiline = true;
             this.txt_logs.Name = "txt_logs";
             this.txt_logs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_logs.Size = new System.Drawing.Size(555, 603);
+            this.txt_logs.Size = new System.Drawing.Size(555, 588);
             this.txt_logs.TabIndex = 12;
             // 
             // button1
@@ -243,7 +243,7 @@
             // bt_reisntall
             // 
             this.bt_reisntall.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_reisntall.Location = new System.Drawing.Point(745, 581);
+            this.bt_reisntall.Location = new System.Drawing.Point(745, 566);
             this.bt_reisntall.Name = "bt_reisntall";
             this.bt_reisntall.Size = new System.Drawing.Size(185, 31);
             this.bt_reisntall.TabIndex = 22;
@@ -265,7 +265,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 624);
+            this.ClientSize = new System.Drawing.Size(942, 609);
             this.Controls.Add(this.lb_liskurl);
             this.Controls.Add(this.bt_reisntall);
             this.Controls.Add(this.bt_settings);

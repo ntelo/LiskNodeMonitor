@@ -274,7 +274,7 @@ namespace LiskLog
         {
 
             Cursor.Current = Cursors.WaitCursor;
-            var ser = servers[0].servers.Where(s => s.isMainServer == true).FirstOrDefault();
+            var ser = servers[0].servers.Where(s => s.isMainServer == true).OrderBy(s=>s.priority).FirstOrDefault();
             bool resLoadDelegates = LoadDelegates(false, ser);
 
             if(resLoadDelegates == false)
@@ -404,7 +404,7 @@ namespace LiskLog
             try
             {
                 List<Task> tasks = new List<Task>();
-                foreach (Servers s in account.servers.Where(s => s.isEnable == true).OrderByDescending(s => s.isForging))
+                foreach (Servers s in account.servers.Where(s => s.isEnable == true).OrderByDescending(s => s.isForging).ThenBy(s=>s.priority))
                 {
                     if (s.lastRebuild == null || s.lastRebuild == DateTime.Now)
                         s.lastRebuild = DateTime.Now;
@@ -442,7 +442,7 @@ namespace LiskLog
 
                 foreach (Servers s in account.servers.Where(s => s.isEnable == true).OrderByDescending(s => s.isForging).OrderByDescending(s=>s.consensus))
                 {
-                    message.Append("\r\nSERVER INFO: " + s.serverName.ToUpper() + " " + s.serverIP + " " + s.serverPort + " IS MAINSERVER:" + s.isMainServer + " IS FORGING:" + s.isForging + " IS REBUILDING:" + s.isRebuilding + "\r\n## BLOCK DIFF: " + s.blockDiff + " ##\r\n");
+                    message.Append("\r\nSERVER INFO: " + s.priority + " " + s.serverName.ToUpper() + " " + s.serverIP + " " + s.serverPort + " IS MAINSERVER:" + s.isMainServer + " IS FORGING:" + s.isForging + " IS REBUILDING:" + s.isRebuilding + "\r\n## BLOCK DIFF: " + s.blockDiff + " ##\r\n");
                    
                     message.Append("Consensus: " + s.consensus.ToString() + " ConsensusFromLog: " + s.consensusFromLog.ToString() +   "\r\n");
                     message.Append("ConsensusStr: " + s.consensusStr.Trim() + "\r\n");
@@ -666,7 +666,7 @@ namespace LiskLog
         {
             string tracing = "";
 
-            List<Servers> activeServers = account.servers.Where(s => s.isEnable == true).ToList();
+            List<Servers> activeServers = account.servers.Where(s => s.isEnable == true).OrderBy(s=>s.priority).ToList();
 
            int numberServersAvailable= activeServers.Where(s => s.blockDiff < blockDiffToRebuild).Count();
 
@@ -686,7 +686,7 @@ namespace LiskLog
                         {
                             rebuildNowForkIssue = true;
 
-                            bll.SendEmail(servers.serverName + " Fork 5 detected rebuild will be done", account.account.email, "tailLog:"+ servers.tailLog);
+                            bll.SendEmail(servers.serverName + " Fork detected rebuild will be done", account.account.email, "tailLog:"+ servers.tailLog);
                             break;
                         }
                     }
@@ -698,7 +698,9 @@ namespace LiskLog
                   && servers.isForging == true && servers.LastBlockMinutsPassedSince > 120 && account.account.rate <= 101 && numberServersAvailable > 1)
                   || (servers != null && servers.tailLog.Contains("SIGKILL"))
                   || (servers != null && servers.tailLog.Contains("FATAL ERROR"))
-                   || (servers != null && servers.tailLog.Contains("SIGABRT"))
+                   //|| (servers != null && servers.tailLog.Contains("Failed to add vote"))
+                    || (servers != null && servers.tailLog.Contains("SIGABRT"))
+                     || (servers != null && servers.tailLog.Contains("FATAL"))
                     || (servers != null && rebuildNowForkIssue)
                      || (servers != null && servers.tailLog.Contains("Rebuilding blockchain, current block height: 1"))
                     || servers.isRebuilding==true && servers.lastRebuild.AddMinutes(12)<DateTime.Now
@@ -713,7 +715,7 @@ namespace LiskLog
                     {
                         string main = servers.serverName;
                         string log = servers.tailLog;
-                        var newMain=activeServers.Where(s => s.isMainServer == false && s.blockDiff < 2).OrderByDescending(s => s.consensus).FirstOrDefault();
+                        var newMain=activeServers.Where(s => s.isMainServer == false && s.blockDiff < 2).OrderByDescending(s => s.consensus).ThenBy(s=>s.priority).FirstOrDefault();
                         if(newMain!=null)
                         {
                           
@@ -736,6 +738,7 @@ namespace LiskLog
 
 
                     servers.lastRebuild = DateTime.Now;
+                    servers.lastReboot = DateTime.Now;
                     numberServersAvailable = numberServersAvailable - 1;
 
                     tracing += "Rebuild SERVER " + servers.serverName + ": \r\n";
@@ -795,7 +798,7 @@ namespace LiskLog
 
             Servers mainServer = activeServers.Where(s => s.isMainServer == true).FirstOrDefault();
             List<Servers> backupServers = activeServers.Where(s => s.isMainServer == false 
-            && s.isRebuilding==false &&s.blockDiff<5).OrderByDescending(s=>s.consensus).ToList();
+            && s.isRebuilding==false &&s.blockDiff<5).OrderByDescending(s=>s.consensus).ThenBy(s=>s.priority).ToList();
 
 
             //When not synching, consensus is usually high, so you need to add the -Z flag.
@@ -807,7 +810,7 @@ namespace LiskLog
 
             double minPassedSinceLastSwitch =( DateTime.Now- account.lastServerSwitch).TotalMinutes;
             int comsemsusShift =51;
-            var bestServersBroadhashConsensus = backupServers.Where( s=>s.consensus>= comsemsusShift && s.blockDiff<4  && s.isRebuilding==false).OrderByDescending(s=>s.consensusAvg).OrderByDescending(s => s.consensus).ToList();
+            var bestServersBroadhashConsensus = backupServers.Where( s=>s.consensus>= comsemsusShift && s.blockDiff<4  && s.isRebuilding==false).OrderByDescending(s=>s.consensusAvg).ThenByDescending(s => s.consensus).ThenBy(s => s.priority).ToList();
 
             bool isMainServerConsensusSmallerThanBackUp = true;
             if(bestServersBroadhashConsensus.Count()>1)
@@ -818,7 +821,7 @@ namespace LiskLog
                 || ((mainServer.forgingPositionCurrenSlot==-1 &&  mainServer.consensus< comsemsusShift 
                 && minPassedSinceLastSwitch >=1 && bestServersBroadhashConsensus.Count > 0 
                 && isMainServerConsensusSmallerThanBackUp)//2
-                //&& ((mainServer.LastBlockMinutsPassedSince>6 &&  mainServer.LastBlockMinutsPassedSince <17) || mainServer.LastBlockMinutsPassedSince>20)) 
+              
                 && (mainServer.LastBlockMinutsPassedSince>6) )
                 )     
             {
@@ -977,7 +980,7 @@ namespace LiskLog
             if (mainServer.LastBlockMinutsPassedSince<=2)
             {
                
-                var backs = account.servers.Where(s => s.isMainServer == false && s.isRebuilding == false && s.lastReboot.AddHours(6) <= DateTime.Now).OrderBy(s => s.lastReboot).Take(1).ToList();
+                var backs = account.servers.Where(s => s.isMainServer == false && s.isRebuilding == false && s.lastReboot.AddHours(5) <= DateTime.Now).OrderBy(s => s.lastReboot).Take(1).ToList();
              
                 if(backs.Count>0)
                 {
